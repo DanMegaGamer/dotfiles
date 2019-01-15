@@ -11,6 +11,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'junegunn/fzf'
 Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
@@ -27,7 +28,6 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nono/vim-handlebars'
 Plugin 'pangloss/vim-javascript'
-Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-bundler'
@@ -112,7 +112,7 @@ nnoremap <leader>a :Ack<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>t :FZF<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
@@ -151,4 +151,4 @@ autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 " set colorscheme
-colorscheme molokai
+colorscheme railscasts
