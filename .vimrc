@@ -11,7 +11,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
@@ -19,7 +20,6 @@ Plugin 'austintaylor/vim-indentobject'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'juvenn/mustache.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'garbas/vim-snipmate'
@@ -107,13 +107,16 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>e :FZF -m<CR>
+nnoremap <leader>f :Ag<CR>
 noremap <leader>l :Align
-nnoremap <leader>a :Ack<space>
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>a :Ag<space>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :FZF<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nnoremap <leader>t :GFiles<CR>
+nnoremap <leader>T :Files<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
